@@ -44,9 +44,10 @@
 #define ORIG_E2_AUTO_FAN_PIN     ZRIB_V20_D6_PIN
 #define ORIG_E3_AUTO_FAN_PIN     ZRIB_V20_D6_PIN
 
-#ifndef FILWIDTH_PIN
-  #define FILWIDTH_PIN                        11  // Analog Input
+#ifdef FILWIDTH_PIN
+  #undef FILWIDTH_PIN
 #endif
+#define FILWIDTH_PIN 11 // Analog Input
 
 #ifdef Z_MIN_PROBE_PIN
   #undef Z_MIN_PROBE_PIN
