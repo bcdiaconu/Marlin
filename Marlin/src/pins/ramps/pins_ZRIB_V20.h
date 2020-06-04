@@ -48,6 +48,11 @@
   #define FILWIDTH_PIN                        11  // Analog Input
 #endif
 
+#ifdef Z_MIN_PROBE_PIN
+  #undef Z_MIN_PROBE_PIN
+#endif
+#define Z_MIN_PROBE_PIN 19
+
 #if ENABLED(ZONESTAR_LCD)
   #undef LCD_PINS_RS
   #undef LCD_PINS_ENABLE
