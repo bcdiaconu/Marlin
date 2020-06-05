@@ -1,4 +1,4 @@
-# Marlin 3D Printer Firmware
+# Marlin 3D Printer Firmware for Zonestar P802Qs
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
@@ -8,7 +8,22 @@
 <img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
 Additional documentation can be found at the [Marlin Home Page](http://marlinfw.org/).
-Please let us know if Marlin misbehaves in any way. Volunteers are standing by!
+
+## Known problems
+* LCD buttons do not work
+* Auto bed leveling returns error while first point aquiring
+
+## ToDo
+* Calibration
+* K value calibration
+
+## Debug Info
+### G28 and G29 commands
+* Enable DEBUG_LEVELING_FEATURE and M114_DETAIL and re-flash the firmware.
+* Connect to your printer from host software such as Cura, Printrun or Repetier Host.
+* Issue the command M111 S247 to enable maximum logging.
+* Perform a G28 to do your standard homing procedure.
+* Do a G29 to probe the bed until the point of failure.
 
 ## Marlin 2.0
 
