@@ -19,11 +19,11 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 
 ## Debug Info
 ### G28 and G29 commands
-* Enable DEBUG_LEVELING_FEATURE and M114_DETAIL and re-flash the firmware.
+* Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL` and re-flash the firmware.
 * Connect to your printer from host software such as Cura, Printrun or Repetier Host.
-* Issue the command M111 S247 to enable maximum logging.
-* Perform a G28 to do your standard homing procedure.
-* Do a G29 to probe the bed until the point of failure.
+* Issue the command `M111 S247` to enable maximum logging.
+* Perform a `G28` to do your standard homing procedure.
+* Do a `G29` to probe the bed until the point of failure.
 
 ## Marlin 2.0
 
