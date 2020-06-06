@@ -11,7 +11,7 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 
 ## Known problems
 * LCD buttons do not work
-* Auto bed leveling returns error while first point aquiring
+* Auto bed leveling throws error while first point aquiring
 
 ## ToDo
 * Calibration
@@ -24,6 +24,11 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 * Issue the command `M111 S247` to enable maximum logging.
 * Perform a `G28` to do your standard homing procedure.
 * Do a `G29` to probe the bed until the point of failure.
+
+### EEPROM
+* `M502` Factory reset
+* `M500` Save settings
+* `M501` Restore settings
 
 ## Marlin 2.0
 
