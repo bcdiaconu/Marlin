@@ -1440,7 +1440,7 @@
 // ADC Button Debounce
 //
 #if HAS_ADC_BUTTONS
-  #define ADC_BUTTON_DEBOUNCE_DELAY 50  // (ms) Increase if buttons bounce or repeat too fast
+  #define ADC_BUTTON_DEBOUNCE_DELAY 255  // (ms) Increase if buttons bounce or repeat too fast
 #endif
 
 // @section safety
