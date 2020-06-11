@@ -18,6 +18,9 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 * K value calibration
 
 ## Debug Info
+### Endstops
+View endstop statuses with `M119`
+
 ### G28 and G29 commands
 * Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL` and re-flash the firmware.
 * Connect to your printer from host software such as Cura, Printrun or Repetier Host.
@@ -27,8 +30,8 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 
 ### EEPROM
 * `M502` Factory reset
-* `M500` Save settings
-* `M501` Restore settings
+* `M500` Save settings to EEPROM
+* `M501` Load settings from EEPROM
 
 ## Marlin 2.0
 
