@@ -96,6 +96,12 @@ Marlin is published under the [GPL license](/LICENSE) because we believe in open
 While we can't prevent the use of this code in products (3D printers, CNC, etc.) that are closed source or crippled by a patent, we would prefer that you choose another firmware or, better yet, make your own.
 
 ## ZRIB v3.1
-###Pinout
+### Details
+* main controller: Atmel ATMEGA2560
+* stepper drivers X, Y, Z, E0, E1: Allegro A4982
+* USB-UART Bridge: CP2102-GM/QFN28
+* Voltage regulator: LM7805
+
+### Pinout
 
 `X_MIN_PIN           3`; `X_MAX_PIN         	 2`; `Y_MIN_PIN          14`; `Y_MAX_PIN          15`; `Z_MIN_PIN          18`; `Z_MAX_PIN          19`; `X_STEP_PIN         54`; `X_DIR_PIN          55`; `X_ENABLE_PIN       38`; `Y_STEP_PIN         60`; `Y_DIR_PIN          61`; `Y_ENABLE_PIN       56`; `Z_STEP_PIN         46`; `Z_DIR_PIN          48`; `Z_ENABLE_PIN       62`; `E0_STEP_PIN        26`; `E0_DIR_PIN         28`; `E0_ENABLE_PIN      24`; `E1_STEP_PIN        36`; `E1_DIR_PIN         34`; `E1_ENABLE_PIN      30`; `E2_STEP_PIN         4`; `E2_DIR_PIN          5`; `E2_ENABLE_PIN      22`; `TEMP_0_PIN         13`; `HEATER_0_PIN       10`; `HEATER_BED_PIN      8`; `HEATER_1_PIN        7`; `FAN_PIN             9`; `FAN1_PIN            6`; `SDSS               53`; `LED_PIN            13`; `SD_DETECT_PIN      49`; `PS_ON_PIN          12`; `LCD_PINS_RS        16`; `LCD_PINS_ENABLE    17`; `LCD_PINS_D4        23`; `LCD_PINS_D5        25`; `LCD_PINS_D6        27`; `LCD_PINS_D7        29`; `ADC_KEYPAD_PIN     10`
