@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#include "ZonestarP802Qs.h"
+
 /**
  * Configuration.h
  *
@@ -961,7 +963,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 40, 0, -5 }
+#define NOZZLE_TO_PROBE_OFFSET { NOZZLE_PROBE_OFFSET_X, NOZZLE_PROBE_OFFSET_Y, NOZZLE_PROBE_OFFSET_Z }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1007,7 +1009,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT -MAX_PROBE_ERROR_DIFF // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -1283,6 +1285,7 @@
   #endif
 
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
+  //#define UBL_DEVEL_DEBUGGING    // Enable in-depth UBL bed leveling details with G29 W
 
   //===========================================================================
   //========================= Unified Bed Leveling ============================
@@ -1346,7 +1349,7 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-#define BED_CENTER_AT_0_0
+//#define BED_CENTER_AT_0_0
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
