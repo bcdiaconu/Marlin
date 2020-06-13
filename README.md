@@ -17,6 +17,10 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 * Calibration
 * K value calibration
 
+## Documentation
+### Unified Bed Leveling
+https://marlinfw.org/docs/features/unified_bed_leveling.html#unified-bed-leveling
+
 ## Debug Info
 ### Endstops
 View endstop statuses with `M119`
