@@ -17,16 +17,23 @@ Additional documentation can be found at the [Marlin Home Page](http://marlinfw.
 * Calibration
 * K value calibration
 
+## Documentation
+### Unified Bed Leveling
+https://marlinfw.org/docs/features/unified_bed_leveling.html#unified-bed-leveling
+
 ## Debug Info
 ### Endstops
 View endstop statuses with `M119`
 
 ### G28 and G29 commands
-* Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL` and re-flash the firmware.
-* Connect to your printer from host software such as Cura, Printrun or Repetier Host.
-* Issue the command `M111 S247` to enable maximum logging.
-* Perform a `G28` to do your standard homing procedure.
-* Do a `G29` to probe the bed until the point of failure.
+* Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL`
+* Enable (in ubl.h) or add `#define UBL_DEVEL_DEBUGGING`(to Configuration.h)
+* Build and flash the Firmware to your 3D Printer board
+* Connect to your printer from host software such as Octoprint, Cura, Printrun or Repetier Host
+* Issue the command `M111 S247` to enable maximum logging (or `M111 S32` for Bed Leveling logging)
+* Perform a `G28` to do your standard homing procedure
+* Do a `G29 W` to view debug data for UBL
+* Do a `G29 P1` to start Phase 1 of UBL bed leveling
 
 ### EEPROM
 * `M502` Factory reset
