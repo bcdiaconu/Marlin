@@ -54,6 +54,7 @@
 #endif
 
 #if ENABLED(ZONESTAR_LCD)
+  #undef BOARD_INFO_NAME
   #undef LCD_PINS_RS
   #undef LCD_PINS_ENABLE
   #undef LCD_PINS_D4
@@ -62,7 +63,8 @@
   #undef LCD_PINS_D7
   #undef ADC_KEYPAD_PIN
   #undef BEEPER_PIN
-
+  
+  #define BOARD_INFO_NAME "ZRIB"
   #define LCD_PINS_RS           ZRIB_V20_D16_PIN
   #define LCD_PINS_ENABLE       ZRIB_V20_D17_PIN
   #define LCD_PINS_D4           ZRIB_V20_D23_PIN
