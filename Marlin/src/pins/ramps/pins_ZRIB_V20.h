@@ -55,6 +55,12 @@
 
 #if ENABLED(ZONESTAR_LCD)
   #undef BOARD_INFO_NAME
+  #undef SHIFT_OUT
+  #undef SHIFT_CLK
+  #undef SHIFT_LD
+  #undef BTN_EN1
+  #undef BTN_EN2
+  #undef BTN_ENC
   #undef LCD_PINS_RS
   #undef LCD_PINS_ENABLE
   #undef LCD_PINS_D4
@@ -63,8 +69,9 @@
   #undef LCD_PINS_D7
   #undef ADC_KEYPAD_PIN
   #undef BEEPER_PIN
+  #undef PS_ON_PIN
   
-  #define BOARD_INFO_NAME "ZRIB"
+  #define BOARD_INFO_NAME       "ZRIB"
   #define LCD_PINS_RS           ZRIB_V20_D16_PIN
   #define LCD_PINS_ENABLE       ZRIB_V20_D17_PIN
   #define LCD_PINS_D4           ZRIB_V20_D23_PIN
@@ -73,4 +80,5 @@
   #define LCD_PINS_D7           ZRIB_V20_D29_PIN
   #define ADC_KEYPAD_PIN        ZRIB_V20_A10_PIN
   #define BEEPER_PIN            ZRIB_V20_D37_PIN
+  #define PS_ON_PIN             12
 #endif
