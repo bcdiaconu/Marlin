@@ -1285,7 +1285,7 @@
   #endif
 
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
-  //#define UBL_DEVEL_DEBUGGING    // Enable in-depth UBL bed leveling details with G29 W
+  #define UBL_DEVEL_DEBUGGING    // Enable in-depth UBL bed leveling details with G29 W
 
   //===========================================================================
   //========================= Unified Bed Leveling ============================
@@ -1293,9 +1293,9 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET        10      // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X  4      // Don't use more than 15 points per axis, implementation limited.
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #define MESH_INSET ZONESTAR_P802QS_PROBE_INSET      // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X                    4      // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_Y    GRID_MAX_POINTS_X
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
@@ -1309,11 +1309,11 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+#define MESH_INSET ZONESTAR_P802QS_PROBE_INSET // Set Mesh bounds as an inset region of the bed
+#define GRID_MAX_POINTS_X 3                    // Don't use more than 7 points per axis, implementation limited.
+#define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-  #define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
+#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
 
 #endif // BED_LEVELING
 
@@ -1333,10 +1333,10 @@
 #define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET_LFRB { 20, 20, 20, 20 } // (mm) Left, Front, Right, Back insets
+  #define LEVEL_CORNERS_INSET_LFRB { ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET } // (mm) Left, Front, Right, Back insets
   #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
-  #define LEVEL_CORNERS_Z_HOP       4.0   // (mm) Z height of nozzle between leveling points
-  #define LEVEL_CENTER_TOO              // Move to the center after the last corner
+  #define LEVEL_CORNERS_Z_HOP       2.0   // (mm) Z height of nozzle between leveling points
+  //#define LEVEL_CENTER_TOO              // Move to the center after the last corner
 #endif
 
 /**
