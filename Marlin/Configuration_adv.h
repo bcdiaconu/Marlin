@@ -1529,13 +1529,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_INSET                        30
-  #define PROBE_PT_1_X              PROBE_INSET
-  #define PROBE_PT_1_Y Y_BED_SIZE - PROBE_INSET
-  #define PROBE_PT_2_X              PROBE_INSET
-  #define PROBE_PT_2_Y              PROBE_INSET
-  #define PROBE_PT_3_X X_BED_SIZE - PROBE_INSET
-  #define PROBE_PT_3_Y              PROBE_INSET
+  #define PROBE_PT_1_X ZONESTAR_P802QS_MESH_MIN_Y
+  #define PROBE_PT_1_Y    Y_BED_SIZE - MESH_INSET
+  #define PROBE_PT_2_X ZONESTAR_P802QS_MESH_MIN_Y
+  #define PROBE_PT_2_Y ZONESTAR_P802QS_MESH_MIN_Y
+  #define PROBE_PT_3_X    X_BED_SIZE - MESH_INSET
+  #define PROBE_PT_3_Y ZONESTAR_P802QS_MESH_MIN_Y
 #endif
 
 /**
@@ -1564,8 +1563,8 @@
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
-  #define MESH_MIN_X MAX(MESH_INSET, X_MIN_POS + NOZZLE_PROBE_OFFSET_X)
-  #define MESH_MIN_Y MAX(MESH_INSET, Y_MIN_POS + NOZZLE_PROBE_OFFSET_Y)
+  #define MESH_MIN_X ZONESTAR_P802QS_MESH_MIN_X
+  #define MESH_MIN_Y ZONESTAR_P802QS_MESH_MIN_Y
   //#define MESH_MAX_X MIN(X_BED_SIZE - MESH_INSET, X_BED_SIZE - MESH_INSET - NOZZLE_PROBE_OFFSET_X)
   //#define MESH_MAX_Y MIN(Y_BED_SIZE - MESH_INSET, Y_BED_SIZE - MESH_INSET - NOZZLE_PROBE_OFFSET_Y)
 #endif
