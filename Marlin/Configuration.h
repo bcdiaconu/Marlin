@@ -737,7 +737,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 85 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 97.7 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1221,7 +1221,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28o
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
