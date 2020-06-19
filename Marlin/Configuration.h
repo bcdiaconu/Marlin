@@ -963,7 +963,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { NOZZLE_PROBE_OFFSET_X, NOZZLE_PROBE_OFFSET_Y, NOZZLE_PROBE_OFFSET_Z }
+#define NOZZLE_TO_PROBE_OFFSET { ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_X, ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_Y, ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_Z }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1009,7 +1009,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT -MAX_PROBE_ERROR_DIFF // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT -ZONESTAR_P802QS_MAX_PROBE_ERROR_DIFF // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
