@@ -486,9 +486,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Zonestar P802Qs
-  #define  DEFAULT_Kp 25
-  #define  DEFAULT_Ki 1
-  #define  DEFAULT_Kd 120
+  #define  DEFAULT_Kp 23.23
+  #define  DEFAULT_Ki  1.65
+  #define  DEFAULT_Kd 81.83
 
   // Ultimaker
   //#define  DEFAULT_Kp 22.2
