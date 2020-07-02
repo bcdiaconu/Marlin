@@ -48,6 +48,21 @@ View endstop statuses with `M119`
 * `M500` Save settings to EEPROM
 * `M501` Load settings from EEPROM
 
+### Calibration
+
+#### Determining steps/mm (S)
+
+* Heat the hot-end to material nominal temperature
+* `G1 E100 F100`
+* Measure the extruded length (ml)
+* Find current value set (using m503) (cl)
+* Calculate new S = 100/ml * cl
+
+#### Determining Default_Kp Default_Ki Default_Kd
+
+* `M303 C8 S200 U1`
+* get resulted values from firmware response
+
 ## Marlin 2.0
 
 Marlin 2.0 takes this popular RepRap firmware to the next level by adding support for much faster 32-bit and ARM-based boards while improving support for 8-bit AVR boards. Read about Marlin's decision to use a "Hardware Abstraction Layer" below.
