@@ -18,3 +18,5 @@
 #define ZONESTAR_P802QS_FEEDRATE_Y             100
 #define ZONESTAR_P802QS_FEEDRATE_Z               8
 #define ZONESTAR_P802QS_FEEDRATE_E              50
+#define FIL_RUNOUT_PIN                          15 //Y_MAX_PIN
+#define UBL_DEVEL_DEBUGGING						   // Enable in-depth UBL bed leveling details with G29 W

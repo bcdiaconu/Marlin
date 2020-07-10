@@ -38,7 +38,7 @@
  * Advanced settings can be found in Configuration_adv.h
  *
  */
-#define CONFIGURATION_H_VERSION 020011
+#define CONFIGURATION_H_VERSION 20200710
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -130,11 +130,11 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_ZRIB_V20
+#define MOTHERBOARD BOARD_ZRIB_V20
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "Z5NM2"
+#define CUSTOM_MACHINE_NAME "Zonestar P802Qs"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -309,9 +309,9 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-//  #define HOTEND_OFFSET_X { 0.0, 18.00} // (mm) relative X-offset for each nozzle
-//  #define HOTEND_OFFSET_Y { 0.0, 0.00 }  // (mm) relative Y-offset for each nozzle
-//  #define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
+//#define HOTEND_OFFSET_X { 0.0, 20.00 } // (mm) relative X-offset for each nozzle
+//#define HOTEND_OFFSET_Y { 0.0, 5.00 }  // (mm) relative Y-offset for each nozzle
+//#define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
 
 // @section machine
 
@@ -486,14 +486,14 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Zonestar P802Qs
-  #define  DEFAULT_Kp 23.23
-  #define  DEFAULT_Ki  1.65
-  #define  DEFAULT_Kd 81.83
+  #define DEFAULT_Kp 23.23
+  #define DEFAULT_Ki  1.65
+  #define DEFAULT_Kd 81.83
 
   // Ultimaker
-  //#define  DEFAULT_Kp 22.2
-  //#define  DEFAULT_Ki 1.08
-  //#define  DEFAULT_Kd 114
+  // #define DEFAULT_Kp 22.2
+  // #define DEFAULT_Ki 1.08
+  // #define DEFAULT_Kd 114
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -653,12 +653,12 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING       true // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
 
 /**
@@ -772,8 +772,8 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
+#define DEFAULT_ACCELERATION           500    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION   500    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -1058,7 +1058,7 @@
 // @section extruder
 
 #define DISABLE_E false             // For all extruders
-#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled.
+#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
 
 // @section machine
 
@@ -1147,8 +1147,6 @@
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
-#define FIL_RUNOUT_PIN            15 //Y_MAX_PIN
-
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS       1 // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -1285,7 +1283,6 @@
   #endif
 
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
-  #define UBL_DEVEL_DEBUGGING    // Enable in-depth UBL bed leveling details with G29 W
 
   //===========================================================================
   //========================= Unified Bed Leveling ============================
@@ -1293,13 +1290,13 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET ZONESTAR_P802QS_PROBE_INSET      // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X                    4      // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET ZONESTAR_P802QS_PROBE_INSET // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X                    4 // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y    GRID_MAX_POINTS_X
-
-  #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
-  #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
-
+  
+  #define UBL_MESH_EDIT_MOVES_Z   // Sophisticated users prefer no movement of nozzle
+  #define UBL_SAVE_ACTIVE_ON_M500 // Save the currently active mesh in the current slot on M500
+  
   //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
                                           // as the Z-Height correction value.
 
@@ -1309,11 +1306,11 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-#define MESH_INSET ZONESTAR_P802QS_PROBE_INSET // Set Mesh bounds as an inset region of the bed
-#define GRID_MAX_POINTS_X 3                    // Don't use more than 7 points per axis, implementation limited.
-#define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
-
-#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
+  #define MESH_INSET ZONESTAR_P802QS_PROBE_INSET // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X                    3 // Don't use more than 7 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_Y    GRID_MAX_POINTS_X
+  
+  #define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
 
 #endif // BED_LEVELING
 
@@ -1452,12 +1449,12 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-#define EEPROM_SETTINGS     // Persistent storage with M500 and M501
+#define EEPROM_SETTINGS       // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
-  #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+  //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
 #endif
 
 //
@@ -1484,7 +1481,7 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_HOTEND 190
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
@@ -1508,9 +1505,9 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MAX_POS), 20 }
-  #define NOZZLE_PARK_XY_FEEDRATE ZONESTAR_P802QS_FEEDRATE_Y   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE  ZONESTAR_P802QS_FEEDRATE_Z      // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MIN_POS), 20 }
+  #define NOZZLE_PARK_XY_FEEDRATE ZONESTAR_P802QS_FEEDRATE_Y // (mm/s) X and Y axes feedrate (also used for delta Z axis)
+  #define NOZZLE_PARK_Z_FEEDRATE  ZONESTAR_P802QS_FEEDRATE_Z // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
@@ -1764,7 +1761,7 @@
 //  M300 S<frequency Hz> P<duration ms>
 //
 #define LCD_FEEDBACK_FREQUENCY_DURATION_MS 100
-#define LCD_FEEDBACK_FREQUENCY_HZ 2000
+#define LCD_FEEDBACK_FREQUENCY_HZ         2000
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
@@ -2203,10 +2200,10 @@
 //#define RGBW_LED
 
 #if EITHER(RGB_LED, RGBW_LED)
-//#define RGB_LED_R_PIN 34
-//#define RGB_LED_G_PIN 43
-//#define RGB_LED_B_PIN 35
-//#define RGB_LED_W_PIN -1
+  //#define RGB_LED_R_PIN 34
+  //#define RGB_LED_G_PIN 43
+  //#define RGB_LED_B_PIN 35
+  //#define RGB_LED_W_PIN -1
 #endif
 
 // Support for Adafruit Neopixel LED driver
