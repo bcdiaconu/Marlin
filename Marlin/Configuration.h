@@ -1127,12 +1127,12 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS              -10
-#define Y_MIN_POS               -5
-#define Z_MIN_POS                0
-#define X_MAX_POS (X_BED_SIZE + 5)
-#define Y_MAX_POS       Y_BED_SIZE
-#define Z_MAX_POS              235
+#define X_MIN_POS                -10
+#define Y_MIN_POS                 -5
+#define Z_MIN_POS                  0
+#define X_MAX_POS ((X_BED_SIZE) + 5)
+#define Y_MAX_POS       (Y_BED_SIZE)
+#define Z_MAX_POS                235
 
 /**
  * Software Endstops
@@ -1354,7 +1354,7 @@
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET_LFRB { ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET, ZONESTAR_P802QS_PROBE_INSET } // (mm) Left, Front, Right, Back insets
-  #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
+  #define LEVEL_CORNERS_HEIGHT      0.1   // (mm) Z height of nozzle at leveling points
   #define LEVEL_CORNERS_Z_HOP       2.0   // (mm) Z height of nozzle between leveling points
   //#define LEVEL_CENTER_TOO              // Move to the center after the last corner
 #endif
