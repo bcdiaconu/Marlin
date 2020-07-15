@@ -3,8 +3,8 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
-#define ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_X   50
-#define ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_Y    0
+#define ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_X   38
+#define ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_Y   10
 #define ZONESTAR_P802QS_NOZZLE_PROBE_OFFSET_Z -2.7
 
 #define SERVO0_PIN                              20
