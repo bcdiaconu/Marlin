@@ -22,5 +22,5 @@
 #define FIL_RUNOUT_PIN                          15 //Y_MAX_PIN
 #define UBL_DEVEL_DEBUGGING                        // Enable in-depth UBL bed leveling details with G29 W
 
-#undef ZS_P802Q_MAX
-#undef ZS_P802Q_MIN
+// #undef ZS_P802Q_MAX
+// #undef ZS_P802Q_MIN
