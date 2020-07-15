@@ -1028,10 +1028,10 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    7 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     1 // Z Clearance between multiple probes
-#define Z_AFTER_PROBING             7 // Z position after probing is done
+#define Z_CLEARANCE_DEPLOY_PROBE    4 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  4 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     2 // Z Clearance between multiple probes
+#define Z_AFTER_PROBING             4 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT -ZONESTAR_P802QS_MAX_PROBE_ERROR_DIFF // Farthest distance below the trigger-point to go before stopping
 
@@ -1314,7 +1314,7 @@
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET ZONESTAR_P802QS_PROBE_INSET // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X                    4 // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X                    7 // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y    GRID_MAX_POINTS_X
   
   #define UBL_MESH_EDIT_MOVES_Z   // Sophisticated users prefer no movement of nozzle
