@@ -1,4 +1,4 @@
-# Marlin 3D Printer Firmware
+# Marlin 3D Printer Firmware for Zonestar P802Qs
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
@@ -7,8 +7,61 @@
 
 <img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
-Additional documentation can be found at the [Marlin Home Page](https://marlinfw.org/).
-Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
+Additional documentation can be found at the [Marlin Home Page](http://marlinfw.org/).
+
+## Known problems
+
+* LCD buttons do not work
+* Auto bed leveling throws error while first point aquiring
+
+## ToDo
+
+* Calibration
+* K value calibration
+
+## Documentation
+
+### Unified Bed Leveling
+
+<https://marlinfw.org/docs/features/unified_bed_leveling.html#unified-bed-leveling>
+
+## Debug Info
+
+### EndStops
+
+View endstop statuses with `M119`
+
+### G28 and G29 commands
+
+* Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL`
+* Enable (in ubl.h) or add `#define UBL_DEVEL_DEBUGGING`(to Configuration.h)
+* Build and flash the Firmware to your 3D Printer board
+* Connect to your printer from host software such as Octoprint, Cura, Printrun or Repetier Host
+* Issue the command `M111 S247` to enable maximum logging (or `M111 S32` for Bed Leveling logging)
+* Perform a `G28` to do your standard homing procedure
+* Do a `G29 W` to view debug data for UBL
+* Do a `G29 P1` to start Phase 1 of UBL bed leveling
+
+### EEPROM
+
+* `M502` Factory reset
+* `M500` Save settings to EEPROM
+* `M501` Load settings from EEPROM
+
+### Calibration
+
+#### Determining steps/mm (S)
+
+* Heat the hot-end to material nominal temperature
+* `G1 E100 F100`
+* Measure the extruded length (ml)
+* Find current value set (using m503) (cl)
+* Calculate new S = 100/ml * cl
+
+#### Determining Default_Kp Default_Ki Default_Kd
+
+* `M303 C8 S200 U1`
+* get resulted values from firmware response
 
 ## Marlin 2.0 Bugfix Branch
 
@@ -122,3 +175,33 @@ The current Marlin dev team consists of:
 Marlin is published under the [GPL license](/LICENSE) because we believe in open development. The GPL comes with both rights and obligations. Whether you use Marlin firmware as the driver for your open or closed-source product, you must keep Marlin open, and you must provide your compatible Marlin source code to end users upon request. The most straightforward way to comply with the Marlin license is to make a fork of Marlin on Github, perform your modifications, and direct users to your modified fork.
 
 While we can't prevent the use of this code in products (3D printers, CNC, etc.) that are closed source or crippled by a patent, we would prefer that you choose another firmware or, better yet, make your own.
+
+## Electronics
+
+### Add BLTouch or 3DTouch
+
+There are two cables, one with 2 wires and another with 3 wires
+
+#### Two wires
+
+* GND (Black Wire) to Z-.Pin2 (GND)
+* Zsense (Wite Wire) to Z-.Pin3 (D18)
+
+#### Three wires
+
+* +5V (Red Wire) to Aux1.2 (+5V)
+* GND (Brown Wire) to Aux1.4 (GND)
+* ServoSense (Yellow Wire) to Aux1.8 (D20)
+
+### Details
+
+* model: ZRIB
+* version: 3.1
+* main controller: Atmel ATMEGA2560
+* stepper drivers for axes X, Y, Z, E0, E1: Allegro A4982
+* USB-UART Bridge: CP2102-GM/QFN28
+* Voltage regulator: LM7805
+
+### Pinout
+
+`X_MIN_PIN           3`; `X_MAX_PIN           2`; `Y_MIN_PIN          14`; `Y_MAX_PIN          15`; `Z_MIN_PIN          18`; `Z_MAX_PIN          19`; `X_STEP_PIN         54`; `X_DIR_PIN          55`; `X_ENABLE_PIN       38`; `Y_STEP_PIN         60`; `Y_DIR_PIN          61`; `Y_ENABLE_PIN       56`; `Z_STEP_PIN         46`; `Z_DIR_PIN          48`; `Z_ENABLE_PIN       62`; `E0_STEP_PIN        26`; `E0_DIR_PIN         28`; `E0_ENABLE_PIN      24`; `E1_STEP_PIN        36`; `E1_DIR_PIN         34`; `E1_ENABLE_PIN      30`; `E2_STEP_PIN         4`; `E2_DIR_PIN          5`; `E2_ENABLE_PIN      22`; `TEMP_0_PIN         13`; `HEATER_0_PIN       10`; `HEATER_BED_PIN      8`; `HEATER_1_PIN        7`; `FAN_PIN             9`; `FAN1_PIN            6`; `SDSS               53`; `LED_PIN            13`; `SD_DETECT_PIN      49`; `PS_ON_PIN          12`; `LCD_PINS_RS        16`; `LCD_PINS_ENABLE    17`; `LCD_PINS_D4        23`; `LCD_PINS_D5        25`; `LCD_PINS_D6        27`; `LCD_PINS_D7        29`; `ADC_KEYPAD_PIN     10`
