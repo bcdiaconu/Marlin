@@ -20,7 +20,10 @@
 #define ZONESTAR_P802QS_FEEDRATE_Z               8
 #define ZONESTAR_P802QS_FEEDRATE_E              50
 #define FIL_RUNOUT_PIN                          15 //Y_MAX_PIN
-#define UBL_DEVEL_DEBUGGING                        // Enable in-depth UBL bed leveling details with G29 W
 
-// #undef ZS_P802Q_MAX
-// #undef ZS_P802Q_MIN
+/* Debugging */
+
+//#define UBL_DEVEL_DEBUGGING                      // Enable in-depth UBL bed leveling details with G29 W
+//#define DEBUG_LEVELING_FEATURE
+//#define M114_DETAIL                              // Use 'M114` for details to check planner calculations
+//#define M114_REALTIME                            // Real current position based on forward kinematics
