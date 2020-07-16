@@ -184,8 +184,8 @@ There are two cables, one with 2 wires and another with 3 wires
 
 #### Two wires
 
-* GND (Black Wire) to Z-.Pin2 (GND)
-* Zsense (Wite Wire) to Z-.Pin3 (D18)
+* GND (Black Wire) to Z_Max.Pin2 (GND)
+* Zsense (Wite Wire) to Z_Max.Pin3 (D19)
 
 #### Three wires
 
