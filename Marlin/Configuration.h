@@ -1531,8 +1531,8 @@
   //#define NOZZLE_PARK_X_ONLY                               // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY                               // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN                          3 // (mm) Always raise Z by at least this distance
-  #define NOZZLE_PARK_XY_FEEDRATE ZONESTAR_P802QS_FEEDRATE_Y // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE  ZONESTAR_P802QS_FEEDRATE_Z // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_XY_FEEDRATE         HOMING_FEEDRATE_XY // (mm/s) X and Y axes feedrate (also used for delta Z axis)
+  #define NOZZLE_PARK_Z_FEEDRATE           HOMING_FEEDRATE_Z // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
