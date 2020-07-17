@@ -762,7 +762,7 @@
 
 #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { ZONESTAR_P802QS_FEEDRATE_X * 2, ZONESTAR_P802QS_FEEDRATE_Y * 2, ZONESTAR_P802QS_FEEDRATE_Z * 2, ZONESTAR_P802QS_FEEDRATE_E * 2 } // ...or, set your own edit limits
 #endif
 
 /**
