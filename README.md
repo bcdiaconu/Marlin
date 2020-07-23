@@ -184,16 +184,16 @@ There are two cables, one with 2 wires and another with 3 wires
 
 #### Two wires
 
-* GND (Black Wire) to Z_Max.Pin2 (GND)
-* Zsense (Wite Wire) to Z_Max.Pin3 (D19)
+* GND (Black Wire) to Z_Min.Pin2 (GND)
+* Zsense (Wite Wire) to Z_Min.Pin3 (D19)
 
 #### Three wires
 
 Will be connected to Aux1 Pin header which has the pinout configuration:
-    [1] 2
-    3  4
-    5  6
-    7  8
+    `[1] 2`
+    `3  4`
+    `5  6`
+    `7  8`
 
 * +5V (Red Wire) to Aux1.2 (+5V)
 * GND (Brown Wire) to Aux1.4 (GND)
