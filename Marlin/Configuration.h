@@ -37,7 +37,7 @@
  *
  * Advanced settings can be found in Configuration_adv.h
  */
-#define CONFIGURATION_H_VERSION 020007
+#define CONFIGURATION_H_VERSION 20201005
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -1104,10 +1104,10 @@
 
 //#define UNKNOWN_Z_NO_RAISE      // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-//#define Z_HOMING_HEIGHT  4      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT  5      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                   // Be sure to have this much clearance over your Z_MAX_POS to prevent grinding.
 
-//#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z
+#define Z_AFTER_HOMING   5      // (mm) Height to move to after homing Z
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
@@ -1468,9 +1468,9 @@
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
 #define EEPROM_SETTINGS       // Persistent storage with M500 and M501
-#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
+// #define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
-// #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
+#define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
   //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
 #endif
@@ -1493,7 +1493,7 @@
 //
 // M149 Set temperature units support
 //
-//#define TEMPERATURE_UNITS_SUPPORT
+#define TEMPERATURE_UNITS_SUPPORT
 
 // @section temperature
 
@@ -1524,11 +1524,11 @@
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
   #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MAX_POS), 20 }
-  #define NOZZLE_PARK_X_ONLY          // X move only is required to park
-  #define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
-  #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
-  #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
+  // #define NOZZLE_PARK_X_ONLY                           // X move only is required to park
+  // #define NOZZLE_PARK_Y_ONLY                           // Y move only is required to park
+  #define NOZZLE_PARK_Z_RAISE_MIN                  3   // (mm) Always raise Z by at least this distance
+  #define NOZZLE_PARK_XY_FEEDRATE HOMING_FEEDRATE_XY   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
+  #define NOZZLE_PARK_Z_FEEDRATE   HOMING_FEEDRATE_Z   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
@@ -1632,7 +1632,7 @@
  *
  * View the current statistics with M78.
  */
-//#define PRINTCOUNTER
+#define PRINTCOUNTER
 
 /**
  * Password
