@@ -9,14 +9,8 @@
 
 Additional documentation can be found at the [Marlin Home Page](http://marlinfw.org/).
 
-## Known problems
-
-* LCD buttons do not work
-* Auto bed leveling throws error while first point aquiring
-
 ## ToDo
 
-* Calibration
 * K value calibration
 
 ## Documentation
