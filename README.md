@@ -17,6 +17,10 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 * Mainboard: BigTreeTech SKR v1.4 Turbo
 * Stepper drivers: BigTreeTech TMC2209
 * Display: BigTreeTech TFT35 E3 V3.0
+* Extruder:
+  * Type: Bowden
+  * Hotend: Creality MK8
+  * Gears: Bondtech BMG clone
 
 ## Marlin 2.0 Bugfix Branch
 
