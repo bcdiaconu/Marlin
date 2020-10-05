@@ -22,6 +22,50 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
   * Hotend: Creality MK8
   * Gears: Bondtech BMG clone
 
+## Documentation
+
+### Unified Bed Leveling
+
+<https://marlinfw.org/docs/features/unified_bed_leveling.html#unified-bed-leveling>
+
+## Debug Info
+
+### EndStops
+
+View endstop statuses with `M119`
+
+### G28 and G29 commands
+
+* Enable `DEBUG_LEVELING_FEATURE` and `M114_DETAIL`
+* Enable (in ubl.h) or add `#define UBL_DEVEL_DEBUGGING`(to Configuration.h)
+* Build and flash the Firmware to your 3D Printer board
+* Connect to your printer from host software such as Octoprint, Cura, Printrun or Repetier Host
+* Issue the command `M111 S247` to enable maximum logging (or `M111 S32` for Bed Leveling logging)
+* Perform a `G28` to do your standard homing procedure
+* Do a `G29 W` to view debug data for UBL
+* Do a `G29 P1` to start Phase 1 of UBL bed leveling
+
+### EEPROM
+
+* `M502` Factory reset
+* `M500` Save settings to EEPROM
+* `M501` Load settings from EEPROM
+
+### Calibration
+
+#### Determining steps/mm (S)
+
+* Heat the hot-end to material nominal temperature
+* `G1 E100 F100`
+* Measure the extruded length (ml)
+* Find current value set (using m503) (cl)
+* Calculate new S = 100/ml * cl
+
+#### Determining Default_Kp Default_Ki Default_Kd
+
+* `M303 C8 S200 U1`
+* get resulted values from firmware response
+
 ## Marlin 2.0 Bugfix Branch
 
 __Not for production use. Use with caution!__
