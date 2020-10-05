@@ -10,6 +10,14 @@
 Additional documentation can be found at the [Marlin Home Page](https://marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
 
+## Branch hardware/ender3pro/skr-v1.4-turbo
+
+### Hardware in use
+
+* Mainboard: BigTreeTech SKR v1.4 Turbo
+* Stepper drivers: BigTreeTech TMC2209
+* Display: BigTreeTech TFT35 E3 V3.0
+
 ## Marlin 2.0 Bugfix Branch
 
 __Not for production use. Use with caution!__
