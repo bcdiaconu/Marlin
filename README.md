@@ -14,6 +14,7 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 
 ### Hardware in use
 
+* Frame: Ender 3 Pro (v1)
 * Mainboard: BigTreeTech SKR v1.4 Turbo
 * Stepper drivers: BigTreeTech TMC2209
 * Display: BigTreeTech TFT35 E3 V3.0
