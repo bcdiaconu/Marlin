@@ -32,7 +32,7 @@
  *
  * Basic settings can be found in Configuration.h
  */
-#define CONFIGURATION_ADV_H_VERSION 20201005
+#define CONFIGURATION_ADV_H_VERSION 20201017
 
 //===========================================================================
 //============================= Thermal Settings ============================

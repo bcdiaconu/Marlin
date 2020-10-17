@@ -37,7 +37,7 @@
  *
  * Advanced settings can be found in Configuration_adv.h
  */
-#define CONFIGURATION_H_VERSION 20201005
+#define CONFIGURATION_H_VERSION 20201017
 
 //===========================================================================
 //============================= Getting Started =============================
