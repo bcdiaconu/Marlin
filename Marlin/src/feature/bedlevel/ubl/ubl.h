@@ -21,7 +21,7 @@
  */
 #pragma once
 
-//#define UBL_DEVEL_DEBUGGING
+#define UBL_DEVEL_DEBUGGING
 
 #include "../../../module/motion.h"
 
