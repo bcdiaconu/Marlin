@@ -1671,7 +1671,7 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X         X_CENTER
+  #define PROBE_PT_1_X E3PV1_MESH_MIN_X
   #define PROBE_PT_1_Y E3PV1_MESH_MAX_Y
   #define PROBE_PT_2_X E3PV1_MESH_MIN_X
   #define PROBE_PT_2_Y E3PV1_MESH_MIN_Y
