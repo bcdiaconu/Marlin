@@ -17,7 +17,7 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 * Frame: Ender 3 Pro (v1)
 * Mainboard: BigTreeTech SKR v1.4 Turbo
 * Stepper drivers: BigTreeTech TMC2209
-* Display: BigTreeTech TFT35 E3 V3.0
+* Display: Original Universal LCD 12864 Creality CR10
 * Extruder:
   * Type: Bowden
   * Hotend: Creality MK8
