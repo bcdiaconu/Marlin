@@ -67,6 +67,16 @@ View endstop statuses with `M119`
 * `M303 C8 S200 U1`
 * get resulted values from firmware response
 
+### Thermistor calibration
+
+1 Connect the calibrated thermistor to Hotend connector on the main board
+1 Set `TEMP_SENSOR_0` to proper model for the calibrated thermistor
+1 Insert the thermistor that will be calibrated to bed thermistor connector on the main board
+1 Change `HEATER_0_MAXTEMP` to reflect desired max temperature to reach by calibrated thermistor
+1 Change `BED_MAXTEMP` to reflect desired max temperature to reach by calibrating thermistor
+1 In `Configuration_adv.h` uncomment `#define SHOW_TEMP_ADC_VALUES`
+1 Use Pronterface to connect to printer and set temperature while reading ADC values
+
 ## Marlin 2.0 Bugfix Branch
 
 __Not for production use. Use with caution!__
