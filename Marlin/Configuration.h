@@ -503,9 +503,9 @@
     #define DEFAULT_Ki_LIST {   1.54,   1.0 }
     #define DEFAULT_Kd_LIST { 76.55, 112.0 }
   #else
-    #define DEFAULT_Kp 25.1
-    #define DEFAULT_Ki 2.26
-    #define DEFAULT_Kd 69.6 
+    #define DEFAULT_Kp 17.6
+    #define DEFAULT_Ki 0.98
+    #define DEFAULT_Kd 79.7 
   #endif
 #endif // PIDTEMP
 
@@ -745,7 +745,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 429 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 427.3 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1126,14 +1126,14 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 233
-#define Y_BED_SIZE 235
+#define X_BED_SIZE 227
+#define Y_BED_SIZE 224
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS -3.5
+#define Y_MIN_POS -23
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE + 16
+#define X_MAX_POS X_BED_SIZE + 20
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 250
 

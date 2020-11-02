@@ -19,9 +19,9 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 * Stepper drivers: BigTreeTech TMC2209
 * Display: Original Universal LCD 12864 Creality CR10
 * Extruder:
-  * Type: Bowden
-  * Hotend: Creality MK8
-  * Gears: Bondtech BMG clone
+  * Type: Direct
+  * Hotend: BMG Aero Volcano
+  * Gears: BMG Aero Volcano
 
 ## Documentation
 

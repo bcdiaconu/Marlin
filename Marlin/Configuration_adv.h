@@ -1079,7 +1079,7 @@
 
   // Add Probe Z Offset calibration to the Z Probe Offsets menu
   #if HAS_BED_PROBE
-    //#define PROBE_OFFSET_WIZARD
+    #define PROBE_OFFSET_WIZARD
     #if ENABLED(PROBE_OFFSET_WIZARD)
       #define PROBE_OFFSET_START -4.0   // Estimated nozzle-to-probe Z offset, plus a little extra
     #endif
@@ -1671,12 +1671,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X E3PV1_MESH_MIN_X
-  #define PROBE_PT_1_Y E3PV1_MESH_MAX_Y
-  #define PROBE_PT_2_X E3PV1_MESH_MIN_X
-  #define PROBE_PT_2_Y E3PV1_MESH_MIN_Y
-  #define PROBE_PT_3_X E3PV1_MESH_MAX_X
-  #define PROBE_PT_3_Y E3PV1_MESH_MIN_Y
+  #define PROBE_PT_1_X E3PV1_PROBE_MIN_X
+  #define PROBE_PT_1_Y E3PV1_PROBE_MAX_Y
+  #define PROBE_PT_2_X E3PV1_PROBE_MIN_X
+  #define PROBE_PT_2_Y E3PV1_PROBE_MIN_Y
+  #define PROBE_PT_3_X E3PV1_PROBE_MAX_X
+  #define PROBE_PT_3_Y E3PV1_PROBE_MIN_Y
 #endif
 
 /**
@@ -1707,10 +1707,10 @@
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
-  #define MESH_MIN_X E3PV1_MESH_MIN_X
-  #define MESH_MIN_Y E3PV1_MESH_MIN_Y
-  #define MESH_MAX_X E3PV1_MESH_MAX_X
-  #define MESH_MAX_Y E3PV1_MESH_MAX_Y
+  //#define MESH_MIN_X E3PV1_PROBE_MIN_X
+  //#define MESH_MIN_Y E3PV1_PROBE_MIN_Y
+  //#define MESH_MAX_X E3PV1_PROBE_MAX_X
+  //#define MESH_MAX_Y E3PV1_PROBE_MAX_Y
 #endif
 
 /**
