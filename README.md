@@ -61,6 +61,7 @@ View endstop statuses with `M119`
 * Measure the extruded length (ml)
 * Find current value set (using m503) (cl)
 * Calculate new S = 100/ml * cl
+* <https://www.thingiverse.com/thing:2484766>
 
 #### Determining Default_Kp Default_Ki Default_Kd
 
