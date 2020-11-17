@@ -37,8 +37,10 @@
 #endif
 
 #if HAS_GRAPHICAL_TFT
-  #include "../tft/touch.h"
   #include "../tft/tft.h"
+  #if ENABLED(TOUCH_SCREEN)
+    #include "../tft/touch.h"
+  #endif
 #endif
 
 #if EITHER(PROBE_MANUALLY, MESH_BED_LEVELING)
@@ -281,10 +283,6 @@ void menu_bed_leveling() {
     SUBMENU(MSG_ZPROBE_ZOFFSET, lcd_babystep_zoffset);
   #elif HAS_BED_PROBE
     EDIT_ITEM(LCD_Z_OFFSET_TYPE, MSG_ZPROBE_ZOFFSET, &probe.offset.z, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX);
-  #endif
-
-  #if ENABLED(PROBE_OFFSET_WIZARD)
-    SUBMENU(MSG_PROBE_WIZARD, goto_probe_offset_wizard);
   #endif
 
   #if ENABLED(LEVEL_BED_CORNERS)

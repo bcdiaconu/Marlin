@@ -2,6 +2,9 @@
  * Marlin 3D Printer Firmware
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
+ * Based on Sprinter and grbl.
+ * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -18,27 +21,19 @@
  */
 #pragma once
 
-#include <stdint.h>
-
-#ifndef HAVE_SW_SERIAL
-   #define SW_SERIAL_PLACEHOLDER 1
+#ifdef __IMXRT1062__
+  #include <NativeEthernet.h>
 #endif
 
-class SoftwareSerial {
-public:
-  SoftwareSerial(int8_t RX_pin, int8_t TX_pin);
+// Teensy 4.1 uses internal MAC Address
 
-  void begin(const uint32_t baudrate);
-
-  bool available();
-
-  uint8_t read();
-  uint16_t write(uint8_t byte);
-  void flush();
-
-  void listen();
-  void stopListening();
-
-protected:
-  bool listening;
+class MarlinEthernet {
+  public:
+    static bool hardware_enabled, have_telnet_client;
+    static IPAddress ip, myDns, gateway, subnet;
+    static EthernetClient telnetClient;
+    static void init();
+    static void check();
 };
+
+extern MarlinEthernet ethernet;
